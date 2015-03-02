@@ -30,21 +30,21 @@
         {
             this.RB_J1_Joueur = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RB_J1_IA = new System.Windows.Forms.RadioButton();
             this.GB_J1_Diff = new System.Windows.Forms.GroupBox();
-            this.RB_J1_Courageux = new System.Windows.Forms.RadioButton();
-            this.RB_J1_Moyen = new System.Windows.Forms.RadioButton();
+            this.CHBX_J1_Compte = new System.Windows.Forms.CheckBox();
             this.RB_J1_Prudent = new System.Windows.Forms.RadioButton();
+            this.RB_J1_Moyen = new System.Windows.Forms.RadioButton();
+            this.RB_J1_Courageux = new System.Windows.Forms.RadioButton();
+            this.RB_J1_IA = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GB_J2_Diff = new System.Windows.Forms.GroupBox();
+            this.CHBX_J2_Compte = new System.Windows.Forms.CheckBox();
             this.RB_J2_Prudent = new System.Windows.Forms.RadioButton();
             this.RB_J2_Moyen = new System.Windows.Forms.RadioButton();
             this.RB_J2_Courageux = new System.Windows.Forms.RadioButton();
             this.RB_J2_IA = new System.Windows.Forms.RadioButton();
             this.RB_J2_Humain = new System.Windows.Forms.RadioButton();
-            this.CHBX_J2_Compte = new System.Windows.Forms.CheckBox();
-            this.CHBX_J1_Compte = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BTN_Demarrer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.GB_J1_Diff.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,17 +75,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Joueur 1";
             // 
-            // RB_J1_IA
-            // 
-            this.RB_J1_IA.AutoSize = true;
-            this.RB_J1_IA.Location = new System.Drawing.Point(16, 51);
-            this.RB_J1_IA.Name = "RB_J1_IA";
-            this.RB_J1_IA.Size = new System.Drawing.Size(74, 17);
-            this.RB_J1_IA.TabIndex = 1;
-            this.RB_J1_IA.Text = "Ordinateur";
-            this.RB_J1_IA.UseVisualStyleBackColor = true;
-            this.RB_J1_IA.CheckedChanged += new System.EventHandler(this.RB_J1_IA_CheckedChanged);
-            // 
             // GB_J1_Diff
             // 
             this.GB_J1_Diff.Controls.Add(this.CHBX_J1_Compte);
@@ -98,6 +87,39 @@
             this.GB_J1_Diff.TabIndex = 2;
             this.GB_J1_Diff.TabStop = false;
             this.GB_J1_Diff.Text = "Paramètres";
+            // 
+            // CHBX_J1_Compte
+            // 
+            this.CHBX_J1_Compte.AutoSize = true;
+            this.CHBX_J1_Compte.Enabled = false;
+            this.CHBX_J1_Compte.Location = new System.Drawing.Point(16, 91);
+            this.CHBX_J1_Compte.Name = "CHBX_J1_Compte";
+            this.CHBX_J1_Compte.Size = new System.Drawing.Size(126, 17);
+            this.CHBX_J1_Compte.TabIndex = 3;
+            this.CHBX_J1_Compte.Text = "Comptage des cartes";
+            this.CHBX_J1_Compte.UseVisualStyleBackColor = true;
+            // 
+            // RB_J1_Prudent
+            // 
+            this.RB_J1_Prudent.AutoSize = true;
+            this.RB_J1_Prudent.Enabled = false;
+            this.RB_J1_Prudent.Location = new System.Drawing.Point(16, 67);
+            this.RB_J1_Prudent.Name = "RB_J1_Prudent";
+            this.RB_J1_Prudent.Size = new System.Drawing.Size(62, 17);
+            this.RB_J1_Prudent.TabIndex = 2;
+            this.RB_J1_Prudent.Text = "Prudent";
+            this.RB_J1_Prudent.UseVisualStyleBackColor = true;
+            // 
+            // RB_J1_Moyen
+            // 
+            this.RB_J1_Moyen.AutoSize = true;
+            this.RB_J1_Moyen.Enabled = false;
+            this.RB_J1_Moyen.Location = new System.Drawing.Point(16, 43);
+            this.RB_J1_Moyen.Name = "RB_J1_Moyen";
+            this.RB_J1_Moyen.Size = new System.Drawing.Size(57, 17);
+            this.RB_J1_Moyen.TabIndex = 1;
+            this.RB_J1_Moyen.Text = "Moyen";
+            this.RB_J1_Moyen.UseVisualStyleBackColor = true;
             // 
             // RB_J1_Courageux
             // 
@@ -112,27 +134,16 @@
             this.RB_J1_Courageux.Text = "Courageux";
             this.RB_J1_Courageux.UseVisualStyleBackColor = true;
             // 
-            // RB_J1_Moyen
+            // RB_J1_IA
             // 
-            this.RB_J1_Moyen.AutoSize = true;
-            this.RB_J1_Moyen.Enabled = false;
-            this.RB_J1_Moyen.Location = new System.Drawing.Point(16, 43);
-            this.RB_J1_Moyen.Name = "RB_J1_Moyen";
-            this.RB_J1_Moyen.Size = new System.Drawing.Size(57, 17);
-            this.RB_J1_Moyen.TabIndex = 1;
-            this.RB_J1_Moyen.Text = "Moyen";
-            this.RB_J1_Moyen.UseVisualStyleBackColor = true;
-            // 
-            // RB_J1_Prudent
-            // 
-            this.RB_J1_Prudent.AutoSize = true;
-            this.RB_J1_Prudent.Enabled = false;
-            this.RB_J1_Prudent.Location = new System.Drawing.Point(16, 67);
-            this.RB_J1_Prudent.Name = "RB_J1_Prudent";
-            this.RB_J1_Prudent.Size = new System.Drawing.Size(62, 17);
-            this.RB_J1_Prudent.TabIndex = 2;
-            this.RB_J1_Prudent.Text = "Prudent";
-            this.RB_J1_Prudent.UseVisualStyleBackColor = true;
+            this.RB_J1_IA.AutoSize = true;
+            this.RB_J1_IA.Location = new System.Drawing.Point(16, 51);
+            this.RB_J1_IA.Name = "RB_J1_IA";
+            this.RB_J1_IA.Size = new System.Drawing.Size(74, 17);
+            this.RB_J1_IA.TabIndex = 1;
+            this.RB_J1_IA.Text = "Ordinateur";
+            this.RB_J1_IA.UseVisualStyleBackColor = true;
+            this.RB_J1_IA.CheckedChanged += new System.EventHandler(this.RB_J1_IA_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -158,6 +169,17 @@
             this.GB_J2_Diff.TabIndex = 2;
             this.GB_J2_Diff.TabStop = false;
             this.GB_J2_Diff.Text = "Paramètres";
+            // 
+            // CHBX_J2_Compte
+            // 
+            this.CHBX_J2_Compte.AutoSize = true;
+            this.CHBX_J2_Compte.Enabled = false;
+            this.CHBX_J2_Compte.Location = new System.Drawing.Point(16, 90);
+            this.CHBX_J2_Compte.Name = "CHBX_J2_Compte";
+            this.CHBX_J2_Compte.Size = new System.Drawing.Size(126, 17);
+            this.CHBX_J2_Compte.TabIndex = 3;
+            this.CHBX_J2_Compte.Text = "Comptage des cartes";
+            this.CHBX_J2_Compte.UseVisualStyleBackColor = true;
             // 
             // RB_J2_Prudent
             // 
@@ -217,44 +239,22 @@
             this.RB_J2_Humain.Text = "Humain";
             this.RB_J2_Humain.UseVisualStyleBackColor = true;
             // 
-            // CHBX_J2_Compte
+            // BTN_Demarrer
             // 
-            this.CHBX_J2_Compte.AutoSize = true;
-            this.CHBX_J2_Compte.Enabled = false;
-            this.CHBX_J2_Compte.Location = new System.Drawing.Point(16, 90);
-            this.CHBX_J2_Compte.Name = "CHBX_J2_Compte";
-            this.CHBX_J2_Compte.Size = new System.Drawing.Size(126, 17);
-            this.CHBX_J2_Compte.TabIndex = 3;
-            this.CHBX_J2_Compte.Text = "Comptage des cartes";
-            this.CHBX_J2_Compte.UseVisualStyleBackColor = true;
-            // 
-            // CHBX_J1_Compte
-            // 
-            this.CHBX_J1_Compte.AutoSize = true;
-            this.CHBX_J1_Compte.Enabled = false;
-            this.CHBX_J1_Compte.Location = new System.Drawing.Point(16, 91);
-            this.CHBX_J1_Compte.Name = "CHBX_J1_Compte";
-            this.CHBX_J1_Compte.Size = new System.Drawing.Size(126, 17);
-            this.CHBX_J1_Compte.TabIndex = 3;
-            this.CHBX_J1_Compte.Text = "Comptage des cartes";
-            this.CHBX_J1_Compte.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(217, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Démarrer la partie";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BTN_Demarrer.Location = new System.Drawing.Point(217, 375);
+            this.BTN_Demarrer.Name = "BTN_Demarrer";
+            this.BTN_Demarrer.Size = new System.Drawing.Size(111, 23);
+            this.BTN_Demarrer.TabIndex = 3;
+            this.BTN_Demarrer.Text = "Démarrer la partie";
+            this.BTN_Demarrer.UseVisualStyleBackColor = true;
+            this.BTN_Demarrer.Click += new System.EventHandler(this.BTN_Demarrer_Click);
             // 
             // ChoixDesJoueurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 410);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BTN_Demarrer);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChoixDesJoueurs";
@@ -289,6 +289,6 @@
         private System.Windows.Forms.RadioButton RB_J2_Humain;
         private System.Windows.Forms.CheckBox CHBX_J1_Compte;
         private System.Windows.Forms.CheckBox CHBX_J2_Compte;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTN_Demarrer;
     }
 }

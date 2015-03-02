@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.Joueur1 = new TP3_Stats_Blackjack.UC_Main();
-            this.Joueur2 = new TP3_Stats_Blackjack.UC_Main();
             this.button2 = new System.Windows.Forms.Button();
+            this.Main_Joueur2 = new TP3_Stats_Blackjack.UC_Main();
+            this.Main_Joueur1 = new TP3_Stats_Blackjack.UC_Main();
             this.SuspendLayout();
             // 
             // button1
@@ -44,20 +44,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Joueur1
-            // 
-            this.Joueur1.Location = new System.Drawing.Point(12, 12);
-            this.Joueur1.Name = "Joueur1";
-            this.Joueur1.Size = new System.Drawing.Size(662, 133);
-            this.Joueur1.TabIndex = 0;
-            // 
-            // Joueur2
-            // 
-            this.Joueur2.Location = new System.Drawing.Point(12, 361);
-            this.Joueur2.Name = "Joueur2";
-            this.Joueur2.Size = new System.Drawing.Size(662, 133);
-            this.Joueur2.TabIndex = 2;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(584, 314);
@@ -68,15 +54,29 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // Main_Joueur2
+            // 
+            this.Main_Joueur2.Location = new System.Drawing.Point(12, 361);
+            this.Main_Joueur2.Name = "Main_Joueur2";
+            this.Main_Joueur2.Size = new System.Drawing.Size(808, 133);
+            this.Main_Joueur2.TabIndex = 2;
+            // 
+            // Main_Joueur1
+            // 
+            this.Main_Joueur1.Location = new System.Drawing.Point(12, 12);
+            this.Main_Joueur1.Name = "Main_Joueur1";
+            this.Main_Joueur1.Size = new System.Drawing.Size(808, 133);
+            this.Main_Joueur1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 520);
+            this.ClientSize = new System.Drawing.Size(862, 520);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.Joueur2);
+            this.Controls.Add(this.Main_Joueur2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Joueur1);
+            this.Controls.Add(this.Main_Joueur1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -85,9 +85,9 @@
 
         #endregion
 
-        private UC_Main Joueur1;
+        private UC_Main Main_Joueur1;
         private System.Windows.Forms.Button button1;
-        private UC_Main Joueur2;
+        private UC_Main Main_Joueur2;
         private System.Windows.Forms.Button button2;
     }
 }

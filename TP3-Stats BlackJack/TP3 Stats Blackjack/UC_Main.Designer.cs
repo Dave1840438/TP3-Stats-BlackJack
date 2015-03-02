@@ -38,7 +38,7 @@
             this.PN_MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PN_MainPanel.Location = new System.Drawing.Point(0, 0);
             this.PN_MainPanel.Name = "PN_MainPanel";
-            this.PN_MainPanel.Size = new System.Drawing.Size(662, 102);
+            this.PN_MainPanel.Size = new System.Drawing.Size(808, 102);
             this.PN_MainPanel.TabIndex = 0;
             // 
             // LBL_Score
@@ -67,7 +67,7 @@
             this.Controls.Add(this.LBL_Score);
             this.Controls.Add(this.PN_MainPanel);
             this.Name = "UC_Main";
-            this.Size = new System.Drawing.Size(662, 133);
+            this.Size = new System.Drawing.Size(808, 133);
             this.ResumeLayout(false);
             this.PerformLayout();
 
