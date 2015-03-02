@@ -18,7 +18,7 @@ namespace TP3_Stats_Blackjack
             if (_randomGenerator == null)
                 _randomGenerator = new Random();
 
-            _counter = NB_CARTES - 1;
+            _counter = -1;
             for (int i = 0; i < Enum.GetNames(typeof(Carte.titre)).Length; i++)
             {
                 for (int j = 0; j < Enum.GetNames(typeof(Carte.type)).Length; j++)

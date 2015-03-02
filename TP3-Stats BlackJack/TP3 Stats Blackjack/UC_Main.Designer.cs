@@ -67,7 +67,7 @@
             this.Controls.Add(this.LBL_Score);
             this.Controls.Add(this.PN_MainPanel);
             this.Name = "UC_Main";
-            this.Size = new System.Drawing.Size(808, 133);
+            this.Size = new System.Drawing.Size(808, 131);
             this.ResumeLayout(false);
             this.PerformLayout();
 

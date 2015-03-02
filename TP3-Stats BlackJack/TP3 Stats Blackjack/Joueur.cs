@@ -12,7 +12,7 @@ namespace TP3_Stats_Blackjack
         public bool _compteLesCartes { get; private set; }
         public bool estUneIA { get; private set;}
         private NiveauDeRisque _niveauDeRisque;
-        UC_Main _maMain;
+        public UC_Main _maMain { get; private set; }
         public int pointageTotal { get { return _maMain.RefreshScore(); } }
 
         public Joueur(UC_Main maMain) { _maMain = maMain; estUneIA = false; }
