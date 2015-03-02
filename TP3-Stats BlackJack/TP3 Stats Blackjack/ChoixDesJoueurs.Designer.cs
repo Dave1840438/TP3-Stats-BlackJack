@@ -42,6 +42,9 @@
             this.RB_J2_Courageux = new System.Windows.Forms.RadioButton();
             this.RB_J2_IA = new System.Windows.Forms.RadioButton();
             this.RB_J2_Humain = new System.Windows.Forms.RadioButton();
+            this.CHBX_J2_Compte = new System.Windows.Forms.CheckBox();
+            this.CHBX_J1_Compte = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.GB_J1_Diff.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,15 +88,16 @@
             // 
             // GB_J1_Diff
             // 
+            this.GB_J1_Diff.Controls.Add(this.CHBX_J1_Compte);
             this.GB_J1_Diff.Controls.Add(this.RB_J1_Prudent);
             this.GB_J1_Diff.Controls.Add(this.RB_J1_Moyen);
             this.GB_J1_Diff.Controls.Add(this.RB_J1_Courageux);
             this.GB_J1_Diff.Location = new System.Drawing.Point(147, 28);
             this.GB_J1_Diff.Name = "GB_J1_Diff";
-            this.GB_J1_Diff.Size = new System.Drawing.Size(145, 101);
+            this.GB_J1_Diff.Size = new System.Drawing.Size(145, 123);
             this.GB_J1_Diff.TabIndex = 2;
             this.GB_J1_Diff.TabStop = false;
-            this.GB_J1_Diff.Text = "groupBox2";
+            this.GB_J1_Diff.Text = "Paramètres";
             // 
             // RB_J1_Courageux
             // 
@@ -137,22 +141,23 @@
             this.groupBox3.Controls.Add(this.RB_J2_Humain);
             this.groupBox3.Location = new System.Drawing.Point(12, 185);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(319, 147);
+            this.groupBox3.Size = new System.Drawing.Size(319, 169);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Joueur 1";
             // 
             // GB_J2_Diff
             // 
+            this.GB_J2_Diff.Controls.Add(this.CHBX_J2_Compte);
             this.GB_J2_Diff.Controls.Add(this.RB_J2_Prudent);
             this.GB_J2_Diff.Controls.Add(this.RB_J2_Moyen);
             this.GB_J2_Diff.Controls.Add(this.RB_J2_Courageux);
             this.GB_J2_Diff.Location = new System.Drawing.Point(147, 28);
             this.GB_J2_Diff.Name = "GB_J2_Diff";
-            this.GB_J2_Diff.Size = new System.Drawing.Size(145, 101);
+            this.GB_J2_Diff.Size = new System.Drawing.Size(145, 123);
             this.GB_J2_Diff.TabIndex = 2;
             this.GB_J2_Diff.TabStop = false;
-            this.GB_J2_Diff.Text = "groupBox4";
+            this.GB_J2_Diff.Text = "Paramètres";
             // 
             // RB_J2_Prudent
             // 
@@ -212,11 +217,44 @@
             this.RB_J2_Humain.Text = "Humain";
             this.RB_J2_Humain.UseVisualStyleBackColor = true;
             // 
+            // CHBX_J2_Compte
+            // 
+            this.CHBX_J2_Compte.AutoSize = true;
+            this.CHBX_J2_Compte.Enabled = false;
+            this.CHBX_J2_Compte.Location = new System.Drawing.Point(16, 90);
+            this.CHBX_J2_Compte.Name = "CHBX_J2_Compte";
+            this.CHBX_J2_Compte.Size = new System.Drawing.Size(126, 17);
+            this.CHBX_J2_Compte.TabIndex = 3;
+            this.CHBX_J2_Compte.Text = "Comptage des cartes";
+            this.CHBX_J2_Compte.UseVisualStyleBackColor = true;
+            // 
+            // CHBX_J1_Compte
+            // 
+            this.CHBX_J1_Compte.AutoSize = true;
+            this.CHBX_J1_Compte.Enabled = false;
+            this.CHBX_J1_Compte.Location = new System.Drawing.Point(16, 91);
+            this.CHBX_J1_Compte.Name = "CHBX_J1_Compte";
+            this.CHBX_J1_Compte.Size = new System.Drawing.Size(126, 17);
+            this.CHBX_J1_Compte.TabIndex = 3;
+            this.CHBX_J1_Compte.Text = "Comptage des cartes";
+            this.CHBX_J1_Compte.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(217, 375);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Démarrer la partie";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ChoixDesJoueurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 341);
+            this.ClientSize = new System.Drawing.Size(340, 410);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChoixDesJoueurs";
@@ -249,5 +287,8 @@
         private System.Windows.Forms.RadioButton RB_J2_Courageux;
         private System.Windows.Forms.RadioButton RB_J2_IA;
         private System.Windows.Forms.RadioButton RB_J2_Humain;
+        private System.Windows.Forms.CheckBox CHBX_J1_Compte;
+        private System.Windows.Forms.CheckBox CHBX_J2_Compte;
+        private System.Windows.Forms.Button button1;
     }
 }

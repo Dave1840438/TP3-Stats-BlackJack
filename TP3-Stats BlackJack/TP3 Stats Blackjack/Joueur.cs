@@ -8,15 +8,15 @@ namespace TP3_Stats_Blackjack
 {
     public class Joueur
     {
-        public enum NiveauDeRisque { Aucun, courageux = 50, moyen = 65, prudent = 80 }
-
+        public enum NiveauDeRisque { Aucun, Courageux = 50, Moyen = 65, Prudent = 80 }
+        public bool _compteLesCartes { get; private set; }
         public bool estUneIA { get; private set;}
         private NiveauDeRisque _niveauDeRisque;
         UC_Main _maMain;
         public int pointageTotal { get { return _maMain.RefreshScore(); } }
 
         public Joueur(UC_Main maMain) { _maMain = maMain; estUneIA = false; }
-        public Joueur(UC_Main maMain, NiveauDeRisque niveauDeRisque) { _maMain = maMain; estUneIA = true; _niveauDeRisque = niveauDeRisque; }
+        public Joueur(UC_Main maMain, NiveauDeRisque niveauDeRisque, bool compteLesCartes) { _maMain = maMain; estUneIA = true; _niveauDeRisque = niveauDeRisque; _compteLesCartes = compteLesCartes; }
 
         /// <summary>
         /// Returns a bool saying if the AI wants to draw another card
@@ -25,7 +25,7 @@ namespace TP3_Stats_Blackjack
         /// <returns></returns>
         public bool pigeUneCarte(double possibilitéDeDépasser)
         {
-            return possibilitéDeDépasser <= (double)_niveauDeRisque / 100.0;
+            return possibilitéDeDépasser >= 1.0 - ((double)_niveauDeRisque / 100.0);
         }
     }
 }

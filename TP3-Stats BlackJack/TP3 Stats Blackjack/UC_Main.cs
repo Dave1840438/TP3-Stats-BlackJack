@@ -61,7 +61,7 @@ namespace TP3_Stats_Blackjack
             {
                 score1 = (total - (nbAs * differencePointageAs));
                 score2 = total;
-                LBL_Score.Text = messageScore + score1.ToString() + " ou de " + score2.ToString();
+                LBL_Score.Text = messageScore + score1.ToString() + " ou " + score2.ToString();
 
                 if (score1 > 21 & score2 > 21)
                     resultat = score1 < score2 ? score1 : score2;
