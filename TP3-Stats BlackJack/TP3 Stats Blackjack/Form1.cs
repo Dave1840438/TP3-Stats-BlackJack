@@ -51,7 +51,6 @@ namespace TP3_Stats_Blackjack
                 BTN_J2_Piger.Visible = false;
                 BTN_J2_Passer.Visible = false;
             }
-
         }
 
 
@@ -71,21 +70,28 @@ namespace TP3_Stats_Blackjack
         {
             Main_Joueur1.leJoueurPasseSonTour();
             TourEstFini();
+            joueur1.AFini = true;
+            DetecterFinDePartie();
         }
 
         private void TourEstFini()
         {
-            foreach (Control c in GB_Controles_J2.Controls)
-                c.Enabled = !c.Enabled;
+            if (!joueur1.AFini && !joueur2.AFini)
+            {
+                foreach (Control c in GB_Controles_J1.Controls)
+                    c.Enabled = !c.Enabled;
 
-            foreach (Control c in GB_Controles_J1.Controls)
-                c.Enabled = !c.Enabled;
+                foreach (Control c in GB_Controles_J2.Controls)
+                    c.Enabled = !c.Enabled;
+            }
         }
 
         private void BTN_J2_Passer_Click(object sender, EventArgs e)
         {
             Main_Joueur2.leJoueurPasseSonTour();
             TourEstFini();
+            joueur2.AFini = true;
+            DetecterFinDePartie();
         }
 
         private void BTN_IA2_Jouer_Click(object sender, EventArgs e)
@@ -100,11 +106,45 @@ namespace TP3_Stats_Blackjack
 
         private void IA_Jouer(Joueur IA)
         {
-            if (IA.pigeUneCarte(paquet.probabiliteDeNePasDepasser(objectifPointage - IA.pointageTotal, IA._compteLesCartes)))
+            bool aPasser = false;
+
+            Joueur autreJoueur = IA == joueur1 ? joueur2 : joueur1;
+
+            if (IA.pointageTotal <= 10 || (autreJoueur.pointageTotal == 21 & IA.pointageTotal <= 21))
+                IA._maMain.AjouterCarte(paquet.pigerUneCarte());
+            else if (IA.pigeUneCarte(paquet.probabiliteDeNePasDepasser(objectifPointage - IA.pointageTotal, IA._compteLesCartes)))
                 IA._maMain.AjouterCarte(paquet.pigerUneCarte());
             else
+            {
                 IA._maMain.leJoueurPasseSonTour();
+                aPasser = true;
+            }
             TourEstFini();
+            IA.AFini = aPasser;
+            DetecterFinDePartie();
+        }
+
+        public void DetecterFinDePartie()
+        {
+            if (joueur1.AFini && joueur2.AFini)
+                FinDePartie();
+        }
+
+        public void FinDePartie()
+        {
+            foreach (Control c in GB_Controles_J1.Controls)
+                c.Enabled = false;
+
+            foreach (Control c in GB_Controles_J2.Controls)
+                c.Enabled = false;
+
+            MessageBox.Show("La partie est finie");
+        }
+
+        private void BTN_StopGame_Click(object sender, EventArgs e)
+        {
+            FinDePartie();
+            BTN_StopGame.Enabled = false;
         }
     }
 }

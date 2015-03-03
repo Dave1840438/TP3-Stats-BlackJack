@@ -38,8 +38,11 @@
             this.BTN_IA2_Journal = new System.Windows.Forms.Button();
             this.GB_Controles_J1 = new System.Windows.Forms.GroupBox();
             this.GB_Controles_J2 = new System.Windows.Forms.GroupBox();
+            this.BTN_StopGame = new System.Windows.Forms.Button();
             this.Main_Joueur2 = new TP3_Stats_Blackjack.UC_Main();
             this.Main_Joueur1 = new TP3_Stats_Blackjack.UC_Main();
+            this.BTN_Restart = new System.Windows.Forms.Button();
+            this.BTN_Quit = new System.Windows.Forms.Button();
             this.GB_Controles_J1.SuspendLayout();
             this.GB_Controles_J2.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +135,7 @@
             this.GB_Controles_J1.Controls.Add(this.BTN_J1_Piger);
             this.GB_Controles_J1.Controls.Add(this.BTN_IA1_Journal);
             this.GB_Controles_J1.Controls.Add(this.BTN_IA1_Jouer);
-            this.GB_Controles_J1.Location = new System.Drawing.Point(12, 162);
+            this.GB_Controles_J1.Location = new System.Drawing.Point(12, 145);
             this.GB_Controles_J1.Name = "GB_Controles_J1";
             this.GB_Controles_J1.Size = new System.Drawing.Size(817, 62);
             this.GB_Controles_J1.TabIndex = 10;
@@ -145,12 +148,22 @@
             this.GB_Controles_J2.Controls.Add(this.BTN_IA2_Journal);
             this.GB_Controles_J2.Controls.Add(this.BTN_J2_Passer);
             this.GB_Controles_J2.Controls.Add(this.BTN_J2_Piger);
-            this.GB_Controles_J2.Location = new System.Drawing.Point(12, 230);
+            this.GB_Controles_J2.Location = new System.Drawing.Point(12, 243);
             this.GB_Controles_J2.Name = "GB_Controles_J2";
             this.GB_Controles_J2.Size = new System.Drawing.Size(808, 74);
             this.GB_Controles_J2.TabIndex = 11;
             this.GB_Controles_J2.TabStop = false;
             this.GB_Controles_J2.Text = "Controles Joueur 2";
+            // 
+            // BTN_StopGame
+            // 
+            this.BTN_StopGame.Location = new System.Drawing.Point(104, 214);
+            this.BTN_StopGame.Name = "BTN_StopGame";
+            this.BTN_StopGame.Size = new System.Drawing.Size(108, 23);
+            this.BTN_StopGame.TabIndex = 12;
+            this.BTN_StopGame.Text = "Arreter la partie";
+            this.BTN_StopGame.UseVisualStyleBackColor = true;
+            this.BTN_StopGame.Click += new System.EventHandler(this.BTN_StopGame_Click);
             // 
             // Main_Joueur2
             // 
@@ -166,11 +179,34 @@
             this.Main_Joueur1.Size = new System.Drawing.Size(808, 144);
             this.Main_Joueur1.TabIndex = 0;
             // 
+            // BTN_Restart
+            // 
+            this.BTN_Restart.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BTN_Restart.Location = new System.Drawing.Point(218, 214);
+            this.BTN_Restart.Name = "BTN_Restart";
+            this.BTN_Restart.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Restart.TabIndex = 13;
+            this.BTN_Restart.Text = "Rejouer";
+            this.BTN_Restart.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Quit
+            // 
+            this.BTN_Quit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTN_Quit.Location = new System.Drawing.Point(300, 213);
+            this.BTN_Quit.Name = "BTN_Quit";
+            this.BTN_Quit.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Quit.TabIndex = 14;
+            this.BTN_Quit.Text = "Quitter";
+            this.BTN_Quit.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 488);
+            this.Controls.Add(this.BTN_Quit);
+            this.Controls.Add(this.BTN_Restart);
+            this.Controls.Add(this.BTN_StopGame);
             this.Controls.Add(this.GB_Controles_J2);
             this.Controls.Add(this.GB_Controles_J1);
             this.Controls.Add(this.Main_Joueur2);
@@ -197,6 +233,9 @@
         private System.Windows.Forms.Button BTN_IA2_Journal;
         private System.Windows.Forms.GroupBox GB_Controles_J1;
         private System.Windows.Forms.GroupBox GB_Controles_J2;
+        private System.Windows.Forms.Button BTN_StopGame;
+        private System.Windows.Forms.Button BTN_Restart;
+        private System.Windows.Forms.Button BTN_Quit;
     }
 }
 

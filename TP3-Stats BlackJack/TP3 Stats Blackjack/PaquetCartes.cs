@@ -56,7 +56,7 @@ namespace TP3_Stats_Blackjack
             int nbBonnesCartesRestantes = 0;
             for (int i = _counter + 1; i < NB_CARTES; i++)
             {
-                if (_deck[i].valeurEnPointage <= valeurANePasDepasser)
+                if ((_deck[i].valeurEnPointage == 11 && valeurANePasDepasser >= 1) || (_deck[i].valeurEnPointage <= valeurANePasDepasser))
                     nbBonnesCartesRestantes++;
             }
             return (double)nbBonnesCartesRestantes / (double)nbCartesRstantes;
