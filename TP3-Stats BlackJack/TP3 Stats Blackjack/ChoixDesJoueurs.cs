@@ -26,18 +26,14 @@ namespace TP3_Stats_Blackjack
 
         private void RB_J1_IA_CheckedChanged(object sender, EventArgs e)
         {
-            bool status = RB_J1_IA.Checked;
-
             foreach (Control c in GB_J1_Diff.Controls)
-                c.Enabled = status;
+                c.Enabled = RB_J1_IA.Checked;
         }
 
         private void RB_J2_IA_CheckedChanged(object sender, EventArgs e)
         {
-            bool status = RB_J2_IA.Checked;
-
             foreach (Control c in GB_J2_Diff.Controls)
-                c.Enabled = status;
+                c.Enabled = RB_J2_IA.Checked;
         }
 
         private void BTN_Demarrer_Click(object sender, EventArgs e)

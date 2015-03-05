@@ -50,11 +50,5 @@ namespace TP3_Stats_Blackjack
         {
             log.Add(message);
         }
-
-        public void AfficherLog()
-        {
-            foreach (String s in log)
-                MessageBox.Show(s);
-        }
     }
 }

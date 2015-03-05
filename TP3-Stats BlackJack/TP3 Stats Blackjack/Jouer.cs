@@ -16,7 +16,7 @@ namespace TP3_Stats_Blackjack
         PaquetCartes paquet;
         Joueur joueur1;
         Joueur joueur2;
-        const int objectifPointage = 31;
+        const int objectifPointage = 21;
 
         public Jouer()
         {
@@ -70,7 +70,6 @@ namespace TP3_Stats_Blackjack
 
         private void BTN_J1_Passer_Click(object sender, EventArgs e)
         {
-            Main_Joueur1.leJoueurPasseSonTour();
             TourEstFini();
             joueur1.AFini = true;
             DetecterFinDePartie();
@@ -90,7 +89,6 @@ namespace TP3_Stats_Blackjack
 
         private void BTN_J2_Passer_Click(object sender, EventArgs e)
         {
-            Main_Joueur2.leJoueurPasseSonTour();
             TourEstFini();
             joueur2.AFini = true;
             DetecterFinDePartie();
@@ -109,26 +107,28 @@ namespace TP3_Stats_Blackjack
         private void IA_Jouer(Joueur IA)
         {
             bool aPasser = false;
-
             Joueur autreJoueur = IA == joueur1 ? joueur2 : joueur1;
 
-            if (IA.pointageTotal <= 10 )
+            if (autreJoueur.pointageTotal > objectifPointage)
             {
-                IA._maMain.AjouterCarte(paquet.pigerUneCarte());
-                IA.AjouterAuLog("J'ai un pointage 10 ou moins, donc je pige.");
+                aPasser = true;
+                IA.AjouterAuLog("Mon adversaire a déja perdu, donc je passe.");
             }
-            else if (autreJoueur.pointageTotal == objectifPointage && IA.pointageTotal <= objectifPointage)
+            else if (autreJoueur.pointageTotal == objectifPointage)
             {
                 IA._maMain.AjouterCarte(paquet.pigerUneCarte());
                 IA.AjouterAuLog("Mon adversaire a 21, donc je pige.");
             }
+            else if (IA.pointageTotal <= 10)
+            {
+                IA._maMain.AjouterCarte(paquet.pigerUneCarte());
+                IA.AjouterAuLog("J'ai un pointage 10 ou moins, donc je pige.");
+            }
             else if (IA.pigeUneCarte(paquet.probabiliteDeNePasDepasser(objectifPointage - IA.pointageTotal, IA._compteLesCartes, IA)))
                 IA._maMain.AjouterCarte(paquet.pigerUneCarte());
             else
-            {
-                IA._maMain.leJoueurPasseSonTour();
                 aPasser = true;
-            }
+
             TourEstFini();
             IA.AFini = aPasser;
             DetecterFinDePartie();
@@ -148,7 +148,7 @@ namespace TP3_Stats_Blackjack
 
         public void FinDePartie()
         {
-            string messageDeFin;
+            string messageDeFin = "";
 
             foreach (Control c in GB_Controles_J1.Controls)
                 c.Enabled = false;
@@ -160,17 +160,19 @@ namespace TP3_Stats_Blackjack
             BTN_Restart.Visible = true;
             BTN_Quit.Visible = true;
 
-            if (joueur1.pointageTotal <= objectifPointage && joueur2.pointageTotal <= objectifPointage)
+            
+            if (joueur1.pointageTotal > objectifPointage && joueur2.pointageTotal > objectifPointage)
+                messageDeFin = "Les deux joueurs sont perdants";
+            else if (joueur1.pointageTotal == joueur2.pointageTotal)
+                messageDeFin = "Partie nulle";
+            else if (joueur1.pointageTotal <= objectifPointage || joueur2.pointageTotal <= objectifPointage)
             {
-                if (joueur1.pointageTotal > joueur2.pointageTotal)
+                if (joueur1.pointageTotal < joueur2.pointageTotal)
                     messageDeFin = "Le joueur 1 gagne!";
-                else if (joueur2.pointageTotal > joueur1.pointageTotal)
+                else if (joueur2.pointageTotal < joueur1.pointageTotal)
                     messageDeFin = "Le joueur 2 gagne!";
-                else
-                    messageDeFin = "Partie nulle";
+
             }
-            else
-                messageDeFin = "Les deux joueurs sont perdrants";
 
             MessageBox.Show(messageDeFin);
         }

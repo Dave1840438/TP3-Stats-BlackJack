@@ -77,11 +77,5 @@ namespace TP3_Stats_Blackjack
 
             return resultat;
         }
-
-        public void leJoueurPasseSonTour()
-        {
-            _nbToursPasses++;
-            LBL_ToursPasses.Text = messageToursPasses + _nbToursPasses.ToString();
-        }
     }
 }

@@ -16,7 +16,7 @@ namespace TP3_Stats_Blackjack
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Jouer());
+            Application.Run(new Demarrage());
         }
     }
 }

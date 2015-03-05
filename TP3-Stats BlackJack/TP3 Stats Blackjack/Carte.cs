@@ -13,7 +13,6 @@ namespace TP3_Stats_Blackjack
 
         public int valeurEnPointage { get { return getValeur(); } }
 
-        public Carte(titre valeur, type type) { _valeur = valeur; _type = type; }
         public Carte(int valeur, int type) { _valeur = (titre)valeur; _type = (type)type; }
 
         public enum titre

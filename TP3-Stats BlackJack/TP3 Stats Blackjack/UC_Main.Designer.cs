@@ -30,7 +30,6 @@
         {
             this.PN_MainPanel = new System.Windows.Forms.Panel();
             this.LBL_Score = new System.Windows.Forms.Label();
-            this.LBL_ToursPasses = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PN_MainPanel
@@ -50,20 +49,10 @@
             this.LBL_Score.TabIndex = 0;
             this.LBL_Score.Text = "Label de score :";
             // 
-            // LBL_ToursPasses
-            // 
-            this.LBL_ToursPasses.AutoSize = true;
-            this.LBL_ToursPasses.Location = new System.Drawing.Point(380, 104);
-            this.LBL_ToursPasses.Name = "LBL_ToursPasses";
-            this.LBL_ToursPasses.Size = new System.Drawing.Size(85, 13);
-            this.LBL_ToursPasses.TabIndex = 1;
-            this.LBL_ToursPasses.Text = "Tours passés : 0";
-            // 
             // UC_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.LBL_ToursPasses);
             this.Controls.Add(this.LBL_Score);
             this.Controls.Add(this.PN_MainPanel);
             this.Name = "UC_Main";
@@ -77,6 +66,5 @@
 
         private System.Windows.Forms.Panel PN_MainPanel;
         private System.Windows.Forms.Label LBL_Score;
-        private System.Windows.Forms.Label LBL_ToursPasses;
     }
 }

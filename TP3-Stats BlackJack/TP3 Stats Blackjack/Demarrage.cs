@@ -19,7 +19,7 @@ namespace TP3_Stats_Blackjack
 
         private void Demarrage_Load(object sender, EventArgs e)
         {
-            while (new Jouer().ShowDialog() == DialogResult.OK) ;
+            while (new Jouer().ShowDialog() == DialogResult.OK);
             this.Close();
         }
     }
