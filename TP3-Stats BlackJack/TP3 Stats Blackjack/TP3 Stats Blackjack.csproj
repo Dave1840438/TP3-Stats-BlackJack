@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfficherLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficherLog.Designer.cs">
+      <DependentUpon>AfficherLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Carte.cs" />
     <Compile Include="ChoixDesJoueurs.cs">
       <SubType>Form</SubType>
@@ -51,11 +57,17 @@
     <Compile Include="ChoixDesJoueurs.Designer.cs">
       <DependentUpon>ChoixDesJoueurs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Demarrage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Demarrage.Designer.cs">
+      <DependentUpon>Demarrage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jouer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jouer.Designer.cs">
+      <DependentUpon>Jouer.cs</DependentUpon>
     </Compile>
     <Compile Include="Joueur.cs" />
     <Compile Include="UC_Main.cs">
@@ -67,11 +79,18 @@
     <Compile Include="PaquetCartes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AfficherLog.resx">
+      <DependentUpon>AfficherLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChoixDesJoueurs.resx">
       <DependentUpon>ChoixDesJoueurs.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Demarrage.resx">
+      <DependentUpon>Demarrage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jouer.resx">
+      <DependentUpon>Jouer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Main.resx">
       <DependentUpon>UC_Main.cs</DependentUpon>

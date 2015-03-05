@@ -63,9 +63,9 @@ namespace TP3_Stats_Blackjack
                 score2 = total;
                 LBL_Score.Text = messageScore + score1.ToString() + " ou " + score2.ToString();
 
-                if (score1 > 21 & score2 > 21)
+                if (score1 > 21 && score2 > 21)
                     resultat = score1 < score2 ? score1 : score2;
-                else if (score1 <= 21 & score2 > 21)
+                else if (score1 <= 21 && score2 > 21)
                     resultat = score1;
                 else resultat = score2;
             }

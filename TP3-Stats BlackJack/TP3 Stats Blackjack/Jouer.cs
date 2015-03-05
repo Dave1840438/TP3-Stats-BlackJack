@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace TP3_Stats_Blackjack
 {
-    public partial class Form1 : Form
+    public partial class Jouer : Form
     {
         PaquetCartes paquet;
         Joueur joueur1;
         Joueur joueur2;
-        const int objectifPointage = 21;
+        const int objectifPointage = 31;
 
-        public Form1()
+        public Jouer()
         {
             InitializeComponent();
             paquet = new PaquetCartes();
@@ -58,12 +58,14 @@ namespace TP3_Stats_Blackjack
         {
             Main_Joueur1.AjouterCarte(paquet.pigerUneCarte());
             TourEstFini();
+            DetecterFinDePartie();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Main_Joueur2.AjouterCarte(paquet.pigerUneCarte());
             TourEstFini();
+            DetecterFinDePartie();
         }
 
         private void BTN_J1_Passer_Click(object sender, EventArgs e)
@@ -110,9 +112,17 @@ namespace TP3_Stats_Blackjack
 
             Joueur autreJoueur = IA == joueur1 ? joueur2 : joueur1;
 
-            if (IA.pointageTotal <= 10 || (autreJoueur.pointageTotal == 21 & IA.pointageTotal <= 21))
+            if (IA.pointageTotal <= 10 )
+            {
                 IA._maMain.AjouterCarte(paquet.pigerUneCarte());
-            else if (IA.pigeUneCarte(paquet.probabiliteDeNePasDepasser(objectifPointage - IA.pointageTotal, IA._compteLesCartes)))
+                IA.AjouterAuLog("J'ai un pointage 10 ou moins, donc je pige.");
+            }
+            else if (autreJoueur.pointageTotal == objectifPointage && IA.pointageTotal <= objectifPointage)
+            {
+                IA._maMain.AjouterCarte(paquet.pigerUneCarte());
+                IA.AjouterAuLog("Mon adversaire a 21, donc je pige.");
+            }
+            else if (IA.pigeUneCarte(paquet.probabiliteDeNePasDepasser(objectifPointage - IA.pointageTotal, IA._compteLesCartes, IA)))
                 IA._maMain.AjouterCarte(paquet.pigerUneCarte());
             else
             {
@@ -126,25 +136,60 @@ namespace TP3_Stats_Blackjack
 
         public void DetecterFinDePartie()
         {
+            if (joueur1.pointageTotal >= objectifPointage)
+                joueur1.AFini = true;
+
+            if (joueur2.pointageTotal >= objectifPointage)
+                joueur2.AFini = true;
+
             if (joueur1.AFini && joueur2.AFini)
                 FinDePartie();
         }
 
         public void FinDePartie()
         {
+            string messageDeFin;
+
             foreach (Control c in GB_Controles_J1.Controls)
                 c.Enabled = false;
 
             foreach (Control c in GB_Controles_J2.Controls)
                 c.Enabled = false;
 
-            MessageBox.Show("La partie est finie");
+            BTN_StopGame.Enabled = false;
+            BTN_Restart.Visible = true;
+            BTN_Quit.Visible = true;
+
+            if (joueur1.pointageTotal <= objectifPointage && joueur2.pointageTotal <= objectifPointage)
+            {
+                if (joueur1.pointageTotal > joueur2.pointageTotal)
+                    messageDeFin = "Le joueur 1 gagne!";
+                else if (joueur2.pointageTotal > joueur1.pointageTotal)
+                    messageDeFin = "Le joueur 2 gagne!";
+                else
+                    messageDeFin = "Partie nulle";
+            }
+            else
+                messageDeFin = "Les deux joueurs sont perdrants";
+
+            MessageBox.Show(messageDeFin);
         }
 
         private void BTN_StopGame_Click(object sender, EventArgs e)
         {
             FinDePartie();
-            BTN_StopGame.Enabled = false;
+        }
+
+        private void BTN_IA2_Journal_Click(object sender, EventArgs e)
+        {
+            //joueur2.AfficherLog();
+            new AfficherLog(joueur2.log).ShowDialog();
+        }
+
+        private void BTN_IA1_Journal_Click(object sender, EventArgs e)
+        {
+            //joueur1.AfficherLog();
+            new AfficherLog(joueur1.log).ShowDialog();
         }
     }
 }

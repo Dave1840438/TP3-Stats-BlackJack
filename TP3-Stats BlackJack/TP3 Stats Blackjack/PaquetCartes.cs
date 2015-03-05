@@ -8,7 +8,7 @@ namespace TP3_Stats_Blackjack
 {
     public class PaquetCartes
     {
-        private const int NB_CARTES = 52;
+        public const int NB_CARTES = 52;
         private static Random _randomGenerator;
         private List<Carte> _deck = new List<Carte>(NB_CARTES);
         private int _counter;
@@ -50,16 +50,21 @@ namespace TP3_Stats_Blackjack
             }
         }
 
-        public double probabiliteDeNePasDepasser(int valeurANePasDepasser, bool compteLesCartes)
+        public double probabiliteDeNePasDepasser(int valeurANePasDepasser, bool compteLesCartes, Joueur IA)
         {
-            int nbCartesRstantes = compteLesCartes ? NB_CARTES - _counter - 1 : NB_CARTES;
+            double probabilite;
+            int nbCartesRestantes = compteLesCartes ? NB_CARTES - _counter - 1 : NB_CARTES;
             int nbBonnesCartesRestantes = 0;
             for (int i = _counter + 1; i < NB_CARTES; i++)
             {
                 if ((_deck[i].valeurEnPointage == 11 && valeurANePasDepasser >= 1) || (_deck[i].valeurEnPointage <= valeurANePasDepasser))
                     nbBonnesCartesRestantes++;
             }
-            return (double)nbBonnesCartesRestantes / (double)nbCartesRstantes;
+
+            probabilite = (double)nbBonnesCartesRestantes / (double)nbCartesRestantes;
+            IA.AjouterAuLog(nbBonnesCartesRestantes, probabilite, nbCartesRestantes);
+
+            return probabilite;
         }
     }
 }
