@@ -17,6 +17,7 @@ namespace TP3_Stats_Blackjack
             InitializeComponent();
         }
 
+        //Permet de boucler le jeu pour rejouer
         private void Demarrage_Load(object sender, EventArgs e)
         {
             while (new Jouer().ShowDialog() == DialogResult.OK);

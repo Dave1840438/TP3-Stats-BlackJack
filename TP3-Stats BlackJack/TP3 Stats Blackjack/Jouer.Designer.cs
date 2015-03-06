@@ -55,23 +55,23 @@
             this.BTN_J1_Piger.TabIndex = 1;
             this.BTN_J1_Piger.Text = "Piger";
             this.BTN_J1_Piger.UseVisualStyleBackColor = true;
-            this.BTN_J1_Piger.Click += new System.EventHandler(this.button1_Click);
+            this.BTN_J1_Piger.Click += new System.EventHandler(this.BTN_J1_Piger_Click);
             // 
             // BTN_J2_Piger
             // 
             this.BTN_J2_Piger.Enabled = false;
-            this.BTN_J2_Piger.Location = new System.Drawing.Point(527, 45);
+            this.BTN_J2_Piger.Location = new System.Drawing.Point(533, 45);
             this.BTN_J2_Piger.Name = "BTN_J2_Piger";
             this.BTN_J2_Piger.Size = new System.Drawing.Size(75, 23);
             this.BTN_J2_Piger.TabIndex = 3;
             this.BTN_J2_Piger.Text = "Piger";
             this.BTN_J2_Piger.UseVisualStyleBackColor = true;
-            this.BTN_J2_Piger.Click += new System.EventHandler(this.button2_Click);
+            this.BTN_J2_Piger.Click += new System.EventHandler(this.BTN_J2_Piger_Click);
             // 
             // BTN_J2_Passer
             // 
             this.BTN_J2_Passer.Enabled = false;
-            this.BTN_J2_Passer.Location = new System.Drawing.Point(634, 45);
+            this.BTN_J2_Passer.Location = new System.Drawing.Point(640, 45);
             this.BTN_J2_Passer.Name = "BTN_J2_Passer";
             this.BTN_J2_Passer.Size = new System.Drawing.Size(75, 23);
             this.BTN_J2_Passer.TabIndex = 4;
@@ -149,7 +149,7 @@
             this.GB_Controles_J2.Controls.Add(this.BTN_J2_Piger);
             this.GB_Controles_J2.Location = new System.Drawing.Point(105, 243);
             this.GB_Controles_J2.Name = "GB_Controles_J2";
-            this.GB_Controles_J2.Size = new System.Drawing.Size(715, 74);
+            this.GB_Controles_J2.Size = new System.Drawing.Size(724, 74);
             this.GB_Controles_J2.TabIndex = 11;
             this.GB_Controles_J2.TabStop = false;
             this.GB_Controles_J2.Text = "Controles Joueur 2";

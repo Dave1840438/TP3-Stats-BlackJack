@@ -8,23 +8,28 @@ namespace TP3_Stats_Blackjack
 {
     public class Carte
     {
+        //Membres
         public titre _valeur;
         public type _type;
 
         public int valeurEnPointage { get { return getValeur(); } }
 
+        //Construit la carte à partir d'entiers
         public Carte(int valeur, int type) { _valeur = (titre)valeur; _type = (type)type; }
 
+        //Le titre de la carte
         public enum titre
         {
             As, Deux, Trois, Quatre, Cinq, Six, Sept, Huit, Neuf, Dix, Valet, Dame, Roi
         }
 
+        //Le type de la carte
         public enum type
         {
             Trèfle, Pique, Coeur, Carreau
         }
 
+        //Retourne la valeur de la carte
         private int getValeur()
         {
             const int valeurFigures = 10;

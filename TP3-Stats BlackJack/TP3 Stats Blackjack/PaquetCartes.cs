@@ -8,11 +8,13 @@ namespace TP3_Stats_Blackjack
 {
     public class PaquetCartes
     {
+        //Membres
         public const int NB_CARTES = 52;
         private static Random _randomGenerator;
         private List<Carte> _deck = new List<Carte>(NB_CARTES);
         private int _counter;
 
+        //Construit le paquet et le mélange
         public PaquetCartes ()
         {
             if (_randomGenerator == null)
@@ -29,6 +31,7 @@ namespace TP3_Stats_Blackjack
             this.shuffle();
         }
 
+        //Renvoie la prochaine carte du paquet
         public Carte pigerUneCarte()
         {
             _counter++;
@@ -36,6 +39,7 @@ namespace TP3_Stats_Blackjack
             return _deck[_counter];
         }
 
+        //Brasse le paquet en échangeant des cartes de place
         private void shuffle()
         {
             int random = 0;
@@ -50,6 +54,7 @@ namespace TP3_Stats_Blackjack
             }
         }
 
+        //Calcule la probabilité de ne pas dépasser
         public double probabiliteDeNePasDepasser(int valeurANePasDepasser, bool compteLesCartes, Joueur IA)
         {
             double probabilite;

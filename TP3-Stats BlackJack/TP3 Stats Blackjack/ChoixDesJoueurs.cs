@@ -13,6 +13,7 @@ namespace TP3_Stats_Blackjack
 
     public partial class ChoixDesJoueurs : Form
     {
+        //Membres
         public Joueur.NiveauDeRisque joueur1NVR;
         public Joueur.NiveauDeRisque joueur2NVR;
         public bool joueur1Compte;
@@ -24,18 +25,21 @@ namespace TP3_Stats_Blackjack
             joueur1NVR = joueur2NVR = Joueur.NiveauDeRisque.Aucun;
         }
 
+        //Cohérence des boutons
         private void RB_J1_IA_CheckedChanged(object sender, EventArgs e)
         {
             foreach (Control c in GB_J1_Diff.Controls)
                 c.Enabled = RB_J1_IA.Checked;
         }
 
+        //Cohérence des boutons
         private void RB_J2_IA_CheckedChanged(object sender, EventArgs e)
         {
             foreach (Control c in GB_J2_Diff.Controls)
                 c.Enabled = RB_J2_IA.Checked;
         }
 
+        //Affecte les variables en vue de transmettre les informations à la prochaine fenêtre
         private void BTN_Demarrer_Click(object sender, EventArgs e)
         {
             if (RB_J1_IA.Checked)

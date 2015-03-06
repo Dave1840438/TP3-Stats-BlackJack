@@ -9,6 +9,7 @@ namespace TP3_Stats_Blackjack
 {
     public class Joueur
     {
+        //Membres de la classe
         public enum NiveauDeRisque { Aucun, Courageux = 50, Moyen = 65, Prudent = 80 }
         public bool _compteLesCartes { get; private set; }
         public bool estUneIA { get; private set;}
@@ -16,22 +17,20 @@ namespace TP3_Stats_Blackjack
         public UC_Main _maMain { get; private set; }
         public int pointageTotal { get { return _maMain.RefreshScore(); } }
         public bool AFini { get; set; }
-
-        public Joueur(UC_Main maMain) { _maMain = maMain; estUneIA = false; AFini = false; log = new List<string>(); }
-        public Joueur(UC_Main maMain, NiveauDeRisque niveauDeRisque, bool compteLesCartes) { _maMain = maMain; estUneIA = true; _niveauDeRisque = niveauDeRisque; _compteLesCartes = compteLesCartes; AFini = false; log = new List<string>(); }
         public List<String> log { get; private set; }
 
+        //Constructeurs
+        public Joueur(UC_Main maMain) { _maMain = maMain; estUneIA = false; AFini = false; log = new List<string>(); }
+        public Joueur(UC_Main maMain, NiveauDeRisque niveauDeRisque, bool compteLesCartes) { _maMain = maMain; estUneIA = true; _niveauDeRisque = niveauDeRisque; _compteLesCartes = compteLesCartes; AFini = false; log = new List<string>(); }
 
-        /// <summary>
-        /// Returns a bool saying if the AI wants to draw another card
-        /// </summary>
-        /// <param name="possibilitéDeDépasser"></param>
-        /// <returns></returns>
+
+        //Retourne un booléen indiquant si l'IA veut piger une carte
         public bool pigeUneCarte(double possibilitéDeNePasDépasser)
         {
             return possibilitéDeNePasDépasser >= ((double)_niveauDeRisque / 100.0);
         }
 
+        //La méthode écrit un message décrivant la pensée de l'IA
         public void AjouterAuLog(int nbBonnesCartes, double possibilitéDeNePasDépasser, int nbCartes)
         {
             string message = "Je pige si j'ai " + ((int)_niveauDeRisque).ToString() + "% de chance de ne pas dépasser,";
@@ -46,6 +45,7 @@ namespace TP3_Stats_Blackjack
             log.Add(message);
         }
 
+        //Ajoute le messaage envoyé directement au journal
         public void AjouterAuLog(String message)
         {
             log.Add(message);

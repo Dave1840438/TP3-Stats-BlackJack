@@ -13,6 +13,8 @@ namespace TP3_Stats_Blackjack
     public partial class AfficherLog : Form
     {
         private const int offset = 23;
+
+        //Affiche chaque action en les numérotants
         public AfficherLog(List<String> actions)
         {
             InitializeComponent();
