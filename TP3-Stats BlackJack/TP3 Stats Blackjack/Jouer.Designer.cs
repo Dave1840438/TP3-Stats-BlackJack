@@ -91,6 +91,9 @@
             // 
             // BTN_IA1_Journal
             // 
+            this.BTN_IA1_Journal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_IA1_Journal.Location = new System.Drawing.Point(24, 162);
             this.BTN_IA1_Journal.Name = "BTN_IA1_Journal";
             this.BTN_IA1_Journal.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +125,9 @@
             // 
             // BTN_IA2_Journal
             // 
+            this.BTN_IA2_Journal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_IA2_Journal.Location = new System.Drawing.Point(24, 288);
             this.BTN_IA2_Journal.Name = "BTN_IA2_Journal";
             this.BTN_IA2_Journal.Size = new System.Drawing.Size(75, 23);
@@ -132,6 +138,9 @@
             // 
             // GB_Controles_J1
             // 
+            this.GB_Controles_J1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GB_Controles_J1.Controls.Add(this.BTN_J1_Passer);
             this.GB_Controles_J1.Controls.Add(this.BTN_J1_Piger);
             this.GB_Controles_J1.Controls.Add(this.BTN_IA1_Jouer);
@@ -144,6 +153,9 @@
             // 
             // GB_Controles_J2
             // 
+            this.GB_Controles_J2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GB_Controles_J2.Controls.Add(this.BTN_IA2_Jouer);
             this.GB_Controles_J2.Controls.Add(this.BTN_J2_Passer);
             this.GB_Controles_J2.Controls.Add(this.BTN_J2_Piger);
@@ -156,6 +168,9 @@
             // 
             // BTN_StopGame
             // 
+            this.BTN_StopGame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_StopGame.Location = new System.Drawing.Point(104, 214);
             this.BTN_StopGame.Name = "BTN_StopGame";
             this.BTN_StopGame.Size = new System.Drawing.Size(108, 23);
@@ -166,6 +181,9 @@
             // 
             // BTN_Restart
             // 
+            this.BTN_Restart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Restart.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Restart.Location = new System.Drawing.Point(218, 214);
             this.BTN_Restart.Name = "BTN_Restart";
@@ -177,6 +195,9 @@
             // 
             // BTN_Quit
             // 
+            this.BTN_Quit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Quit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTN_Quit.Location = new System.Drawing.Point(300, 213);
             this.BTN_Quit.Name = "BTN_Quit";
@@ -204,6 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(71)))), ((int)(((byte)(163)))));
             this.ClientSize = new System.Drawing.Size(862, 488);
             this.Controls.Add(this.BTN_Quit);
             this.Controls.Add(this.BTN_IA2_Journal);
@@ -214,6 +236,8 @@
             this.Controls.Add(this.GB_Controles_J1);
             this.Controls.Add(this.Main_Joueur2);
             this.Controls.Add(this.Main_Joueur1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Jouer";
             this.Text = "Form1";
             this.GB_Controles_J1.ResumeLayout(false);
