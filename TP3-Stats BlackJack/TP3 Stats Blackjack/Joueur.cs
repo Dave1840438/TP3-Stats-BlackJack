@@ -33,9 +33,9 @@ namespace TP3_Stats_Blackjack
         //La méthode écrit un message décrivant la pensée de l'IA
         public void AjouterAuLog(int nbBonnesCartes, double possibilitéDeNePasDépasser, int nbCartes)
         {
-            string message = "Je pige si j'ai " + ((int)_niveauDeRisque).ToString() + "% de chance de ne pas dépasser,";
+            string message = "Je pige si j'ai " + ((int)_niveauDeRisque).ToString() + "% de chance de ne pas dépasser, ";
             message += "il y a présentement " + nbBonnesCartes.ToString() + " bonnes cartes sur " + nbCartes.ToString();
-            message += ", le risque de ne pas dépasser est donc évalué à " + ((int)(possibilitéDeNePasDépasser * 100)).ToString() + "%";
+            message += ", les chances de ne pas dépasser sont évaluées à " + ((int)(possibilitéDeNePasDépasser * 100)).ToString() + "%";
 
             if ((double)_niveauDeRisque / 100 < possibilitéDeNePasDépasser)
                 message += ", donc je pige une carte.";

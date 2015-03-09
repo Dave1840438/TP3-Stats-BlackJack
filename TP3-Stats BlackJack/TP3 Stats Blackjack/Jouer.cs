@@ -178,7 +178,7 @@ namespace TP3_Stats_Blackjack
             
             if (joueur1.pointageTotal > objectifPointage && joueur2.pointageTotal > objectifPointage)
                 messageDeFin = "Les deux joueurs sont perdants";
-            else if (joueur1.pointageTotal >= objectifPointage || joueur2.pointageTotal >= objectifPointage)
+            else if (joueur1.pointageTotal > objectifPointage || joueur2.pointageTotal > objectifPointage)
             {
                 if (joueur1.pointageTotal < joueur2.pointageTotal)
                     messageDeFin = "Le joueur 1 gagne!";

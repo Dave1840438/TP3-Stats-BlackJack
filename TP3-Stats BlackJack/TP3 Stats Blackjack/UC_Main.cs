@@ -17,7 +17,6 @@ namespace TP3_Stats_Blackjack
         private const int largeurCarte = 73;
         private const int HauteurCarte = 98;
         private int _nbCartesEnMain;
-        private int _nbToursPasses;
         private const string messageScore = "Votre score est présentement de : ";
         private const string messageToursPasses = "Tours passés : ";
 

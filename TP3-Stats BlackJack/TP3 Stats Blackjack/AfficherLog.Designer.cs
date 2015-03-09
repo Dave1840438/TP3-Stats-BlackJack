@@ -28,28 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BTN_OK = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // BTN_OK
-            // 
-            this.BTN_OK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_OK.Location = new System.Drawing.Point(917, 236);
-            this.BTN_OK.Name = "BTN_OK";
-            this.BTN_OK.Size = new System.Drawing.Size(75, 23);
-            this.BTN_OK.TabIndex = 0;
-            this.BTN_OK.Text = "Ok";
-            this.BTN_OK.UseVisualStyleBackColor = true;
-            // 
-            // AfficherLog
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 271);
-            this.Controls.Add(this.BTN_OK);
-            this.Name = "AfficherLog";
-            this.Text = "Journal de l\'IA";
-            this.ResumeLayout(false);
+         this.BTN_OK = new System.Windows.Forms.Button();
+         this.SuspendLayout();
+         // 
+         // BTN_OK
+         // 
+         this.BTN_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+         this.BTN_OK.DialogResult = System.Windows.Forms.DialogResult.OK;
+         this.BTN_OK.Location = new System.Drawing.Point(917, 236);
+         this.BTN_OK.Name = "BTN_OK";
+         this.BTN_OK.Size = new System.Drawing.Size(75, 23);
+         this.BTN_OK.TabIndex = 0;
+         this.BTN_OK.Text = "Ok";
+         this.BTN_OK.UseVisualStyleBackColor = true;
+         // 
+         // AfficherLog
+         // 
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.ClientSize = new System.Drawing.Size(1004, 271);
+         this.Controls.Add(this.BTN_OK);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+         this.MaximizeBox = false;
+         this.Name = "AfficherLog";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+         this.Text = "Journal de l\'IA";
+         this.ResumeLayout(false);
 
         }
 
