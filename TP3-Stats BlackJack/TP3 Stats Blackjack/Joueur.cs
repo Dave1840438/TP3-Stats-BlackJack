@@ -19,6 +19,7 @@ namespace TP3_Stats_Blackjack
         public bool AFini { get; set; }
         public List<String> log { get; private set; }
 
+
         //Constructeurs
         public Joueur(UC_Main maMain) { _maMain = maMain; estUneIA = false; AFini = false; log = new List<string>(); }
         public Joueur(UC_Main maMain, NiveauDeRisque niveauDeRisque, bool compteLesCartes) { _maMain = maMain; estUneIA = true; _niveauDeRisque = niveauDeRisque; _compteLesCartes = compteLesCartes; AFini = false; log = new List<string>(); }
@@ -33,7 +34,8 @@ namespace TP3_Stats_Blackjack
         //La méthode écrit un message décrivant la pensée de l'IA
         public void AjouterAuLog(int nbBonnesCartes, double possibilitéDeNePasDépasser, int nbCartes)
         {
-            string message = "Je pige si j'ai " + ((int)_niveauDeRisque).ToString() + "% de chance de ne pas dépasser, ";
+            string message = "J'ai un score de " + _maMain.RefreshScore() + ". ";
+            message += "Je pige si j'ai " + ((int)_niveauDeRisque).ToString() + "% de chance de ne pas dépasser, ";
             message += "il y a présentement " + nbBonnesCartes.ToString() + " bonnes cartes sur " + nbCartes.ToString();
             message += ", les chances de ne pas dépasser sont évaluées à " + ((int)(possibilitéDeNePasDépasser * 100)).ToString() + "%";
 

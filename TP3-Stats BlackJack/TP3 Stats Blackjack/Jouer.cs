@@ -131,7 +131,7 @@ namespace TP3_Stats_Blackjack
                 IA._maMain.AjouterCarte(paquet.pigerUneCarte());
                 IA.AjouterAuLog("Mon adversaire a 21, donc je pige.");
             }
-            else if (IA.pointageTotal <= 10)
+            else if (IA.pointageTotal <= 10 || IA._maMain.AUnAs && !IA._maMain.depasseAvecLAS)
             {
                 IA._maMain.AjouterCarte(paquet.pigerUneCarte());
                 IA.AjouterAuLog("J'ai un pointage 10 ou moins, donc je pige.");
