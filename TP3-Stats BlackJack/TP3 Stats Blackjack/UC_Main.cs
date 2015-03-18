@@ -12,17 +12,27 @@ namespace TP3_Stats_Blackjack
 {
    public partial class UC_Main : UserControl
    {
+      //Image de toutes les cartes
       public static Bitmap imageCartes;
+
+      //Les cartes que chaque joueurs ont.
       List<Carte> _cartesEnMain;
+
+      //Données des images en pixels d'une carte.
       private const int largeurCarte = 73;
       private const int HauteurCarte = 98;
+
+      //Combien de carte chaque joueur à en main
       private int _nbCartesEnMain;
+
+      //Strings affichés à l'écran
       private const string messageScore = "Votre score est présentement de : ";
       private const string messageToursPasses = "Tours passés : ";
 
+      //Vrai ou faux si le joueur dépasserai avec un as.
       public bool depasseAvecLAS { get; private set; }
 
-
+      //Détecte si un joueur à un as dans ses mains.
       public bool AUnAs
       {
          get
@@ -34,6 +44,7 @@ namespace TP3_Stats_Blackjack
          }
       }
 
+      //Initialise la main du joueur, vide la main et remet le score à zéro.
       public UC_Main()
       {
          InitializeComponent();
@@ -44,6 +55,8 @@ namespace TP3_Stats_Blackjack
          depasseAvecLAS = false;
       }
 
+      //Ajoute la carte sélectionnée aléatoirement de la pile restant et l'ajoute à la main du joueur qui joue.
+      //De plus, la carte est affichée à l'écran dans la main du joueur qui joue.
       public void AjouterCarte(Carte carte)
       {
          _cartesEnMain.Add(carte);
@@ -56,6 +69,7 @@ namespace TP3_Stats_Blackjack
          RefreshScore();
       }
 
+      //Recalcul à chaque tour les points des deux joueurs et les affiche à l'écran.
       public int RefreshScore()
       {
          int score1, score2;
