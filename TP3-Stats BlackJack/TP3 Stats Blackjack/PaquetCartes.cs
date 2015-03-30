@@ -60,11 +60,24 @@ namespace TP3_Stats_Blackjack
             double probabilite;
             int nbCartesRestantes = compteLesCartes ? NB_CARTES - _counter - 1 : NB_CARTES;
             int nbBonnesCartesRestantes = 0;
-            for (int i = _counter + 1; i < NB_CARTES; i++)
-            {
-                if ((_deck[i].valeurEnPointage == 11 && valeurANePasDepasser >= 1) || (_deck[i].valeurEnPointage <= valeurANePasDepasser))
+           if (compteLesCartes)
+           {
+              for (int i = _counter + 1; i < NB_CARTES; i++)
+              {
+                 if ((_deck[i].valeurEnPointage == 11 && valeurANePasDepasser >= 1) || (_deck[i].valeurEnPointage <= valeurANePasDepasser))
                     nbBonnesCartesRestantes++;
-            }
+              }
+           }
+           else
+           {
+              List<Carte> nouveauDeck = new PaquetCartes()._deck;
+              for (int i = 0; i < NB_CARTES; i++)
+              {
+                 if ((nouveauDeck[i].valeurEnPointage == 11 && valeurANePasDepasser >= 1) || (nouveauDeck[i].valeurEnPointage <= valeurANePasDepasser))
+                    nbBonnesCartesRestantes++;
+              }
+           }
+            
 
             probabilite = (double)nbBonnesCartesRestantes / (double)nbCartesRestantes;
             IA.AjouterAuLog(nbBonnesCartesRestantes, probabilite, nbCartesRestantes);
