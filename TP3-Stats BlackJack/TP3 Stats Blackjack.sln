@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP3 Stats Blackjack", "TP3 Stats Blackjack\TP3 Stats Blackjack.csproj", "{88D2C474-6F9E-48AF-86C7-25A222113AC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFI2", "ConsoleApplication1\PFI2.csproj", "{48C8DFDB-1DD2-4917-8BE8-58D51238AB1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{88D2C474-6F9E-48AF-86C7-25A222113AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D2C474-6F9E-48AF-86C7-25A222113AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D2C474-6F9E-48AF-86C7-25A222113AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48C8DFDB-1DD2-4917-8BE8-58D51238AB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48C8DFDB-1DD2-4917-8BE8-58D51238AB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48C8DFDB-1DD2-4917-8BE8-58D51238AB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48C8DFDB-1DD2-4917-8BE8-58D51238AB1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
