@@ -8,8 +8,8 @@ namespace PFI2
 {
     class Program
     {
-        const int nbParties = 100;
-        const int bondIA = 5;
+        const int nbParties = 100000;
+        const int bondIA = 1;
 
 
         public struct range
