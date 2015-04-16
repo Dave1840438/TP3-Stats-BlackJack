@@ -40,7 +40,7 @@ namespace PFI2
 
             foreach (double d in aiContre)
             {
-                for (double i = 40; i < 80; i += bondIA)
+                for (double i = 40; i <= 80; i += bondIA)
                 {
                     range resultat = new range();
 
