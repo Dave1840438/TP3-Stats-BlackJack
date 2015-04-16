@@ -8,6 +8,9 @@ namespace PFI2
 {
     class Program
     {
+        const int nbParties = 100;
+        const int bondIA = 5;
+
 
         public struct range
         {
@@ -18,9 +21,10 @@ namespace PFI2
 
             public void afficher()
             {
-                Console.Out.WriteLine(joueur1 + "|" + joueur2 + "|" + nulles);
-                if (joueur1 + joueur2 + nulles != 1000)
-                    Console.Out.WriteLine("Erreur!!");
+                if (joueur1 + joueur2 + nulles != nbParties)
+                    Console.Out.WriteLine("-----------------------------------------");
+                else
+                    Console.Out.WriteLine(joueur1 + "|" + joueur2 + "|" + nulles);
             }
         }
         static void Main(string[] args)
@@ -28,19 +32,19 @@ namespace PFI2
             Jouer leJeu = new Jouer();
 
             List<range> results = new List<range>();
-            
+
             List<double> aiContre = new List<double>();
-            aiContre.Add(40);
-           // aiContre.Add(60);
-           // aiContre.Add(80);
+            aiContre.Add(50);
+            aiContre.Add(65);
+            aiContre.Add(80);
 
             foreach (double d in aiContre)
             {
-                for (double i = 40; i < 80; i++)
+                for (double i = 40; i < 80; i += bondIA)
                 {
                     range resultat = new range();
 
-                    for (double j = 0; j < 1000; j++)
+                    for (double j = 0; j < nbParties; j++)
                     {
                         switch (leJeu.JouerUnePartie(i, d))
                         {
@@ -58,6 +62,7 @@ namespace PFI2
 
                     results.Add(resultat);
                 }
+                results.Add(new range());
             }
 
             Console.Out.WriteLine("Fin!");
