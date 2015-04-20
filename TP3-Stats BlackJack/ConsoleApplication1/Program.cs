@@ -8,8 +8,8 @@ namespace PFI2
 {
     class Program
     {
-        const int nbParties = 100000;
-        const int bondIA = 1;
+        const int nbParties = 1000000;
+        const int bondIA = 5;
 
 
         public struct range
@@ -46,7 +46,7 @@ namespace PFI2
 
                     for (double j = 0; j < nbParties; j++)
                     {
-                        switch (leJeu.JouerUnePartie(i, d))
+                        switch (leJeu.JouerUnePartie(d, i))
                         {
                             case Jouer.Gagnant.JoueurUn:
                                 resultat.joueur1++;
