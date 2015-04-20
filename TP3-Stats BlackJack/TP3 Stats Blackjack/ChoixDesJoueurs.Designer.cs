@@ -45,6 +45,7 @@
          this.RB_J2_IA = new System.Windows.Forms.RadioButton();
          this.RB_J2_Humain = new System.Windows.Forms.RadioButton();
          this.BTN_Demarrer = new System.Windows.Forms.Button();
+         this.radioButton1 = new System.Windows.Forms.RadioButton();
          this.groupBox1.SuspendLayout();
          this.GB_J1_Diff.SuspendLayout();
          this.groupBox3.SuspendLayout();
@@ -152,20 +153,21 @@
          this.groupBox3.Controls.Add(this.RB_J2_Humain);
          this.groupBox3.Location = new System.Drawing.Point(12, 185);
          this.groupBox3.Name = "groupBox3";
-         this.groupBox3.Size = new System.Drawing.Size(319, 169);
+         this.groupBox3.Size = new System.Drawing.Size(319, 199);
          this.groupBox3.TabIndex = 2;
          this.groupBox3.TabStop = false;
          this.groupBox3.Text = "Joueur 1";
          // 
          // GB_J2_Diff
          // 
+         this.GB_J2_Diff.Controls.Add(this.radioButton1);
          this.GB_J2_Diff.Controls.Add(this.CHBX_J2_Compte);
          this.GB_J2_Diff.Controls.Add(this.RB_J2_Prudent);
          this.GB_J2_Diff.Controls.Add(this.RB_J2_Moyen);
          this.GB_J2_Diff.Controls.Add(this.RB_J2_Courageux);
          this.GB_J2_Diff.Location = new System.Drawing.Point(147, 28);
          this.GB_J2_Diff.Name = "GB_J2_Diff";
-         this.GB_J2_Diff.Size = new System.Drawing.Size(145, 123);
+         this.GB_J2_Diff.Size = new System.Drawing.Size(145, 146);
          this.GB_J2_Diff.TabIndex = 2;
          this.GB_J2_Diff.TabStop = false;
          this.GB_J2_Diff.Text = "Paramètres";
@@ -241,7 +243,7 @@
          // 
          // BTN_Demarrer
          // 
-         this.BTN_Demarrer.Location = new System.Drawing.Point(217, 375);
+         this.BTN_Demarrer.Location = new System.Drawing.Point(217, 390);
          this.BTN_Demarrer.Name = "BTN_Demarrer";
          this.BTN_Demarrer.Size = new System.Drawing.Size(111, 23);
          this.BTN_Demarrer.TabIndex = 3;
@@ -249,12 +251,24 @@
          this.BTN_Demarrer.UseVisualStyleBackColor = true;
          this.BTN_Demarrer.Click += new System.EventHandler(this.BTN_Demarrer_Click);
          // 
+         // radioButton1
+         // 
+         this.radioButton1.AutoSize = true;
+         this.radioButton1.Enabled = false;
+         this.radioButton1.Location = new System.Drawing.Point(16, 114);
+         this.radioButton1.Name = "radioButton1";
+         this.radioButton1.Size = new System.Drawing.Size(69, 17);
+         this.radioButton1.TabIndex = 4;
+         this.radioButton1.TabStop = true;
+         this.radioButton1.Text = "Quarante";
+         this.radioButton1.UseVisualStyleBackColor = true;
+         // 
          // ChoixDesJoueurs
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-         this.ClientSize = new System.Drawing.Size(340, 410);
+         this.ClientSize = new System.Drawing.Size(340, 425);
          this.Controls.Add(this.BTN_Demarrer);
          this.Controls.Add(this.groupBox3);
          this.Controls.Add(this.groupBox1);
@@ -295,5 +309,6 @@
         private System.Windows.Forms.CheckBox CHBX_J1_Compte;
         private System.Windows.Forms.CheckBox CHBX_J2_Compte;
         private System.Windows.Forms.Button BTN_Demarrer;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
