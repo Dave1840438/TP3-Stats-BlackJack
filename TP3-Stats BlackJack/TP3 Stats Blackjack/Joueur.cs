@@ -10,7 +10,7 @@ namespace TP3_Stats_Blackjack
     public class Joueur
     {
         //Membres de la classe
-        public enum NiveauDeRisque { Aucun, Courageux = 50, Moyen = 65, Prudent = 80, Quarante = 40 }
+        public enum NiveauDeRisque { Aucun, Courageux = 40, Moyen = 65, Prudent = 80, Quarante = 40 }
         public bool _compteLesCartes { get; private set; }
         public bool estUneIA { get; private set;}
         public NiveauDeRisque _niveauDeRisque;
