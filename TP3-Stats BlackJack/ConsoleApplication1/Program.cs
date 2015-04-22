@@ -6,68 +6,76 @@ using System.Threading.Tasks;
 
 namespace PFI2
 {
-    class Program
-    {
-        const int nbParties = 1000;
-        const int bondIA = 1;
+   class Program
+   {
+      //Constantes
+      const int nbParties = 1000;
+      const int bondIA = 1;
 
+      //Stocke les résultats de chaque IA
+      public struct range
+      {
+         //Variable pour les totaux
+         public int joueur1;
+         public int joueur2;
+         public int nulles;
 
-        public struct range
-        {
+         public void afficher()
+         {
+            if (joueur1 + joueur2 + nulles != nbParties)
+               Console.Out.WriteLine("-----------------------------------------");
+            else
+               Console.Out.WriteLine(joueur1 + "|" + joueur2 + "|" + nulles);
+         }
+      }
+      static void Main(string[] args)
+      {
+         Jouer leJeu = new Jouer();
 
-            public int joueur1;
-            public int joueur2;
-            public int nulles;
+         List<range> results = new List<range>();
 
-            public void afficher()
+         //Les trois IA de base
+         List<double> aiContre = new List<double>();
+         aiContre.Add(50);
+         aiContre.Add(65);
+         aiContre.Add(80);
+
+         //Pour chaque IA de base
+         foreach (double d in aiContre)
+         {
+            //Les difficultés des IA à tester
+            for (double i = 40; i <= 80; i += bondIA)
             {
-                if (joueur1 + joueur2 + nulles != nbParties)
-                    Console.Out.WriteLine("-----------------------------------------");
-                else
-                    Console.Out.WriteLine(joueur1 + "|" + joueur2 + "|" + nulles);
+               range resultat = new range();
+
+               //On joue un certain nombre de parties
+               for (double j = 0; j < nbParties; j++)
+               {
+                  //On stocke le résultat
+                  switch (leJeu.JouerUnePartie(i, d))
+                  {
+                     case Jouer.Gagnant.JoueurUn:
+                        resultat.joueur1++;
+                        break;
+                     case Jouer.Gagnant.JoueurDeux:
+                        resultat.joueur2++;
+                        break;
+                     case Jouer.Gagnant.Nulle:
+                        resultat.nulles++;
+                        break;
+                  }
+               }
+               //Résultat pour un IA
+               results.Add(resultat);
             }
-        }
-        static void Main(string[] args)
-        {
-            Jouer leJeu = new Jouer();
+            //Pour faire une ligne (-------)
+            results.Add(new range());
+         }
 
-            List<range> results = new List<range>();
-
-            List<double> aiContre = new List<double>();
-            aiContre.Add(50);
-            aiContre.Add(65);
-            aiContre.Add(80);
-
-            foreach (double d in aiContre)
-            {
-                for (double i = 40; i <= 80; i += bondIA)
-                {
-                    range resultat = new range();
-
-                    for (double j = 0; j < nbParties; j++)
-                    {
-                        switch (leJeu.JouerUnePartie(i, d))
-                        {
-                            case Jouer.Gagnant.JoueurUn:
-                                resultat.joueur1++;
-                                break;
-                            case Jouer.Gagnant.JoueurDeux:
-                                resultat.joueur2++;
-                                break;
-                            case Jouer.Gagnant.Nulle:
-                                resultat.nulles++;
-                                break;
-                        }
-                    }
-
-                    results.Add(resultat);
-                }
-                results.Add(new range());
-            }
-
-            Console.Out.WriteLine("Fin!");
-            foreach (range r in results)
-                r.afficher();
-        }
-    }
+         //On affiche tous les résultats
+         Console.Out.WriteLine("Fin!");
+         foreach (range r in results)
+            r.afficher();
+      }
+   }
 }
